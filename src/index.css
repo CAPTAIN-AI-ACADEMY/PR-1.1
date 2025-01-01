@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: 'Expletus Sans', sans-serif;
+    background-color: #000000; /* Ensure black background */
+    color: #fff;
+    padding-top: 60px; /* Adjust for fixed header */
+  }
+
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 800px; /* Set max width to 800px */
+    margin: 0 auto;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #000;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0; /* Ensure full width */
+  }
+
+  .chat-area {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #000000; /* Ensure black background */
+  }
+
+  .message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%; /* Set max width to 80% */
+    background-color: #1e2326; /* Set background color */
+    align-self: flex-end; /* Align message to the right */
+  }
+
+  .user {
+    background: linear-gradient(to right, #4800e1, #90278e);
+  }
+
+  .ai {
+    background-color: #1e2326; /* Set response bubble background color */
+  }
+
+  .input-area {
+    display: flex;
+    justify-content: center; /* Center the input and button */
+    align-items: center;
+    padding: 10px;
+    background: #000; /* Match the rest of the page */
+    position: sticky;
+    bottom: 0;
+  }
+
+  textarea,
+  button {
+    box-sizing: border-box; /* Include padding within height */
+  }
+
+  textarea {
+    width: 80%; /* Set width to 80% */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #4800e1, #90278e);
+    color: #fff;
+    font-size: 14px; /* Restore original font size */
+    font-family: 'Expletus Sans', sans-serif; /* Ensure consistent font */
+    resize: none;
+    height: 50px; /* Match height of the button */
+    overflow-y: auto; /* Add scrollbar for overflow */
+  }
+
+  textarea::placeholder {
+    color: #fff;
+    font-size: 14px; /* Match original font size */
+    font-family: 'Expletus Sans', sans-serif; /* Ensure consistent font */
+  }
+
+  button {
+    width: 15%; /* Adjust width to balance with input field */
+    margin-left: 10px;
+    height: 50px; /* Match height of the input area */
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #90278e, #4800e1);
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Expletus Sans', sans-serif; /* Ensure consistent font */
+    font-size: 14px; /* Match font size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000000; /* Black background */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #424242; /* Dark grey color */
+    border-radius: 6px;
+    border: 3px solid #000000; /* Matches the track background */
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #424242 #000000;
+  }
+
+  @media (max-width: 600px) {
+    .chat-container {
+      max-width: 100%;
+    }
+
+    .input-area {
+      padding: 15px; /* More padding for mobile */
+    }
+
+    textarea {
+      width: 70%; /* Adjust width for smaller screens */
+      height: 50px; /* Ensure height matches button */
+    }
+
+    button {
+      width: 25%; /* Adjust width for smaller screens */
+    }
+  }
